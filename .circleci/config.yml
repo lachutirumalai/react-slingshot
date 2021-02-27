@@ -14,9 +14,8 @@ jobs:
     - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: 
-          name: Lint the source code
-          command: npm run lint
+      - run: npm i
+      - run: npm run lint
           
   #Test
   test:
@@ -24,6 +23,7 @@ jobs:
     - image: circleci/node:13.8.0
     steps:
       - checkout
+      - run: npm i
       - run: npm run test
       
   analyze:
